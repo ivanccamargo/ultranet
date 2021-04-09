@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (void)
+{ int HH, MM, SS, CC; // HORAS, MIN., SEG., CICLOS.
+  float CMIN, CSEG; // CALC MIN., CALC SEG.
+  float CCIC, RCIC, FRAC, CSS; // CALC CICLOS, RESULT DE CICLOS, FRAÇÃO DE SEG., CALC FINAL SEG.
+    printf("Digite as horas: ");
+      scanf("%d", &HH);
+    printf("Digite os minutos: ");
+      scanf("%d", &MM);
+    printf("Digite os segundos: ");
+      scanf("%d", &SS);
+        CMIN = HH * 60 + MM; // Transformar Horário em Minutos.
+        CSEG = SS * 0.006; printf ("\n%.2f", CMIN+CSEG); // Cálculo de conversão. 
+        CCIC=CMIN+CSEG;
+          printf("\n\nDigite a quantidade de ciclos: ");
+            scanf("%d", &CC); // Escaneia Ciclos.
+        RCIC = CCIC/CC; printf("\nInicio de cálculo de conversão: %.2f", RCIC);
+          printf("\n\nDigite somente a fração (ex: 10.26 >> digite .26): ");
+            scanf("\n%f", &FRAC);
+        CSS=FRAC*0.6; printf("\n%.2f", CSS); // Finalizado cálculo de segundos.
+        CSS=CSS*100; printf("\n\n00:0""%.0f"":""%.0f", floor(RCIC), CSS); // Formato de hora.
+  return (0); }
